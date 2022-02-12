@@ -1,2 +1,2 @@
 # firebase_vue_crm
-CRM system made with Vue.js framework
+CRM system using Vue.js and Firebase
