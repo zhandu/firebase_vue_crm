@@ -1,7 +1,9 @@
 import { createApp } from 'vue'
+import VueMeta from 'vue-meta'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import tooltipDirective from '@/directives/tooltip.directive'
 import messagePlugin from './utils/message.plugin'
 import Loader from '@/components/app/Loader'
 import './registerServiceWorker'
@@ -28,6 +30,7 @@ let app
 firebase.auth().onAuthStateChanged(() => {
   if (!app) {
     app = createApp(App)
+    .directive('tooltip', tooltipDirective)
     .component('Loader', Loader)
     .use(store)
     .use(router)
